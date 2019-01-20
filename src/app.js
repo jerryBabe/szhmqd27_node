@@ -1,13 +1,13 @@
 //导包
 const express = require('express')
+const path = require('path')
 
 //创建app
 const app = express()
 
-//处理请求
-app.get('/',(req,res)=>{
-    res.send('Hello World')
-})
+//导入路由对象
+const accountRouter = express(path.join(__dirname,'routers/accountRouter.js'))
+app.use('/account',accountRouter)
 
 //启动
 app.listen(3000,'127.0.0.1',err=>{

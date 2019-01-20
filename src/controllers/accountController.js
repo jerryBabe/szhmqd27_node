@@ -1,4 +1,4 @@
 
 exports.getRegisterPage = (req,res) => {
-    res.end('我是注册页面')
+    res.sendFile(path.join(__dirname,'../public/views/register.html'))
 }
